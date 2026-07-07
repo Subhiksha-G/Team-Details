@@ -1,3 +1,5 @@
+// Used props to get properties from parent component(Team.jsx)
+
 function EmployeeCard(props) {
     return(
         <>

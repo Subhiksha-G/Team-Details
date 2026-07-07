@@ -1,5 +1,7 @@
 import { useState } from "react";
-import EmployeeCard from "./EmployeeCard";
+import EmployeeCard from "../Team-Directory/EmployeeCard";
+
+//import EmployeeCard from "../Team-Directory/EmployeeCard";
 
 const employeeData = [
   { id: 1, name: "Subhiksha", role: "Trainee", isOnline: true },
@@ -8,12 +10,13 @@ const employeeData = [
 ];
 
 function Team() {
-  const [employees, setEmployees] = useState(employeeData);
+  const [employees, setEmployees] = useState(employeeData); //useState hook
 
+  // rendering array lists using map function
   const handleToggleStatus = (id) => {
     setEmployees(
       employees.map(emp =>
-        emp.id === id ? { ...emp, isOnline: !emp.isOnline } : emp
+        emp.id === id ? { ...emp, isOnline: !emp.isOnline } : emp  //conditional rendering
     ));
   };
   const handlePing = (name) => {
