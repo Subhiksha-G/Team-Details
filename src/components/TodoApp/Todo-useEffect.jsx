@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 
 export default function Todo() {
   const [tasks, setTasks] = useState("");
+
   const [newTask, setNewTask] = useState(() => {
-    const save = localStorage.getItem("");
+    const save = localStorage.getItem("My Tasks");
     return save ? JSON.parse(save) : [];
   });
 
+  const [category, setCategory] = useState("Personal");
+
   useEffect(() => {
-    localStorage.setItem("", JSON.stringify(newTask));
-    console.log("Hi");
-  }, [newTask]);
+    localStorage.setItem("My Tasks", JSON.stringify(newTask));
+    localStorage.setItem("My Category", category);
+  }, [newTask, category]);
 
   function addTask() {
     if (tasks) {
@@ -34,6 +37,10 @@ export default function Todo() {
         onChange={(event) => setTasks(event.target.value)}
       />
       <button onClick={addTask}>Add</button>
+      <select onChange={(e) => setCategory(e.target.value)} value={category}>
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+      </select>
       <ul>
         {newTask.map((item, index) => (
             <li key={index}>
