@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Todo() {
   const [tasks, setTasks] = useState("");
-  const [newTask, setNewTask] = useState([]);
+  const [newTask, setNewTask] = useState(() => {
+    const save = localStorage.getItem("");
+    return save ? JSON.parse(save) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("", JSON.stringify(newTask));
+    console.log("Hi");
+  }, [newTask]);
 
   function addTask() {
     if (tasks) {
