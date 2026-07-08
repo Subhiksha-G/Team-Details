@@ -5,8 +5,8 @@ import Todo from "./components/TodoApp/Todo-useEffect";
 function App() {
   return (
     <>
-      {/* <Team />
-      <CounterUseEffect /> */}
+      <Team />
+      <CounterUseEffect />
       <Todo />
     </>
   );
