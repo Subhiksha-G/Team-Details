@@ -13,6 +13,7 @@ export default function Todo() {
   useEffect(() => {
     localStorage.setItem("My Tasks", JSON.stringify(newTask));
     localStorage.setItem("My Category", category);
+    console.log("Hi");  
   }, [newTask, category]);
 
   function addTask() {
