@@ -4,14 +4,15 @@ export default function Dashboard() {
   const [status, setStatus] = useState("Active");
   const [isVerified, setIsVerified] = useState(true);
   const [bio, setBio] = useState("This is user dashboard");
-  const [activities, setActivities] = useState([
-    "Logged In",
-    "Updated Profile",
-  ]);
+  const [activities, setActivities] = useState([]);
   let greeting;
   status === "Active"
-    ? (greeting = <h1>Welcome Back!</h1>)
+    ? (greeting = <h1>Hi Subhiksha, Welcome Back!</h1>)
     : (greeting = <h1>See you next time!</h1>);
+
+  const addActivities = () => setActivities(["Logged In", "Updated Profile"]);
+
+  const clearActivities = () => setActivities([]);
   return (
     <>
       <h1>Conditional Rendering</h1>
@@ -27,13 +28,19 @@ export default function Dashboard() {
         <p>
           Activities :
           {activities.length > 0 ? (
-            <ul>
-              {activities.map((activity, index) => (
-                <li key={index}>{activity}</li>
-              ))}
-            </ul>
+            <>
+              <ul>
+                {activities.map((activity, index) => (
+                  <li key={index}>{activity}</li>
+                ))}
+              </ul>
+              <button onClick={clearActivities}>Delete Activities</button>
+            </>
           ) : (
-            <p>No recent activity found.</p>
+            <>
+              <p>No recent activity found.</p>
+              <button onClick={addActivities}>Add Activities</button>
+            </>
           )}
         </p>
       </div>
