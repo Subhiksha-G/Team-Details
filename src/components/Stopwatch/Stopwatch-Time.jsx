@@ -5,22 +5,22 @@ export default function Stopwatch() {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    let interval = null;
+    let intervalTime = null;
 
     if (isActive) {
-      // 10ms interval for precision
-      interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 10);
+      // 10ms intervalTime for precision
+      intervalTime = setInterval(() => {
+        setTime((previousTime) => previousTime + 10);
       }, 10);
     } else {
-      clearInterval(interval);
+      clearInterval(intervalTime);
     }
 
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalTime);
   }, [isActive]);
 
-  // Format helper: converts total ms into 00m:00s:00ms
-  const formatTime = (ms) => {
+  
+  const loadedTime = (ms) => {
     const minutes = Math.floor(ms / 60000);
     const seconds = Math.floor((ms % 60000) / 1000);
     const milliseconds = Math.floor((ms % 1000) / 10);
@@ -30,7 +30,7 @@ export default function Stopwatch() {
   return (
     <>
       <h1>Stopwatch</h1>
-      <h3>{formatTime(time)}</h3>
+      <h3>{loadedTimeTime(time)}</h3>
       <button onClick={() => setIsActive(!isActive)}>
         {isActive ? "Stop" : "Start"}
       </button>
