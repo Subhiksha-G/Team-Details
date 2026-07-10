@@ -8,11 +8,11 @@ import Dashboard from "./components/UserDashboard/Dashboard";
 function App() {
   return (
     <>
-      {/* <Team />
+      <Team />
       <CounterUseEffect />
       <Todo />
       <Dashboard />
-      <Stopwatch /> */}
+      <Stopwatch />
       <API />
     </>
   );
