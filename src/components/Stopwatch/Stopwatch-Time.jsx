@@ -30,7 +30,7 @@ export default function Stopwatch() {
   return (
     <>
       <h1>Stopwatch</h1>
-      <h3>{loadedTimeTime(time)}</h3>
+      <h3>{loadedTime(time)}</h3>
       <button onClick={() => setIsActive(!isActive)}>
         {isActive ? "Stop" : "Start"}
       </button>
