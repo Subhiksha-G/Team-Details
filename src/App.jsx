@@ -1,3 +1,4 @@
+import { AdvancedDashboard } from "./components/AdvancedDashboard/AdvancedDashboard";
 import API from "./components/API-Fetching/API";
 import CounterUseEffect from "./components/CounterApp/Counter-useEffect";
 import LoginForm from "./components/Forms/LoginForm";
@@ -20,9 +21,11 @@ function App() {
         <Link to="/Stopwatch">Stopwatch</Link> | {" "}
         <Link to="/API">API</Link> | {" "}
         <Link to="/LoginForm">LoginForm</Link> | {" "}
+        <Link to="/AdvancedDashboard">AdvancedDashboard</Link>
 
       </nav>
       <Routes>
+        <Route path="/" element={<Home />}/>
         <Route path="/Home" element={<Home />}/>
         <Route path="/Team" element={<Team />} />
         <Route path="/CounterUseEffect" element={<CounterUseEffect />} />
@@ -31,6 +34,7 @@ function App() {
         <Route path="/Stopwatch" element={<Stopwatch />} />
         <Route path="/API" element={<API />} />
         <Route path="/LoginForm" element={<LoginForm />} />
+        <Route path="/AdvancedDashboard" element={<AdvancedDashboard />} />
       </Routes>
     </BrowserRouter>
   );

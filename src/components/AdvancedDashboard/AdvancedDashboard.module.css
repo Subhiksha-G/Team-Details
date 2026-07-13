@@ -1,0 +1,54 @@
+/* Container for the whole page/component */
+.container {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  font-family: sans-serif;
+  color: #333;
+}
+
+/* Style for the card items inside the dashboard */
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the lazy-loaded AdminPanel */
+.adminPanel {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #eefbff;
+  border-left: 5px solid #007bff;
+  border-radius: 4px;
+}
+
+.adminPanel h2 {
+  color: #007bff;
+  margin-top: 0;
+}
+
+/* Loader text style */
+.loader {
+  color: #666;
+  font-weight: bold;
+  padding: 1rem;
+  font-style: italic;
+}
+
+/* Optional: Button style for consistency */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
