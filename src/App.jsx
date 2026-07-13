@@ -1,6 +1,7 @@
 import { AdvancedDashboard } from "./components/AdvancedDashboard/AdvancedDashboard";
 import API from "./components/API-Fetching/API";
 import CounterUseEffect from "./components/CounterApp/Counter-useEffect";
+import { FoodDelivery } from "./components/RESTAPIs/FoodDelivery";
 import LoginForm from "./components/Forms/LoginForm";
 import Home from "./components/Home/Home";
 import Stopwatch from "./components/Stopwatch/Stopwatch-Time";
@@ -8,6 +9,7 @@ import Team from "./components/Team-Directory/Team";
 import Todo from "./components/TodoApp/Todo-useEffect";
 import Dashboard from "./components/UserDashboard/Dashboard";
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { CartComponent } from "./components/Cart/CartComponents";
 
 function App() {
   return (
@@ -21,8 +23,9 @@ function App() {
         <Link to="/Stopwatch">Stopwatch</Link> | {" "}
         <Link to="/API">API</Link> | {" "}
         <Link to="/LoginForm">LoginForm</Link> | {" "}
-        <Link to="/AdvancedDashboard">AdvancedDashboard</Link>
-
+        <Link to="/AdvancedDashboard">AdvancedDashboard</Link> | {" "}
+        <Link to="/FoodDelivery">FoodDelivery</Link> | {" "}
+        <Link to="/CartComponent">CartComponent</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />}/>
@@ -35,9 +38,10 @@ function App() {
         <Route path="/API" element={<API />} />
         <Route path="/LoginForm" element={<LoginForm />} />
         <Route path="/AdvancedDashboard" element={<AdvancedDashboard />} />
+        <Route path="/FoodDelivery" element={<FoodDelivery />} />
+        <Route path="/CartComponent" element={<CartComponent />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default App;

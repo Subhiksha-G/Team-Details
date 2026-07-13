@@ -41,14 +41,17 @@
 
 /* Optional: Button style for consistency */
 button {
-  background-color: #007bff;
+  margin: 5px;
+  background-color: #ff9900;
   color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 50px;
   cursor: pointer;
+  
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #e99453;
+  box-shadow: rgba(0, 0, 0, 0.8);
 }
